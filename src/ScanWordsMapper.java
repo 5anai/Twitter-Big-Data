@@ -35,18 +35,7 @@ public class ScanWordsMapper extends Mapper<LongWritable, Text, Text, LongWritab
                             if (expanded != null) {
                                 expanded = expanded_url.getString("expanded_url");
                                 System.out.println(expanded);   
-                                //Arrays.fill(expanded_urls, expanded);
-			/*if (object.getJsonObject("entities") != null) {
-				JsonArray arrayURLS = object.getJsonArray("urls");
-				arrayURLS.toString();
-				if(arrayURLS != null) {
-					String expanded = null;
-					for (int i = 0; i < arrayURLS.size(); i++) {
-						JsonObject expanded_url = arrayURLS.getJsonObject(i);
-						expanded = expanded_url.getString("expanded_url");
-                        System.out.println(expanded);
-                        output.write(new Text(expanded), new LongWritable(1));
-								//Arrays.fill(expanded_urls, expanded);*/
+                               
                                 output.write(new Text(expanded), new LongWritable(1));
                             }
                         }
@@ -58,8 +47,7 @@ public class ScanWordsMapper extends Mapper<LongWritable, Text, Text, LongWritab
             } catch(NumberFormatException e){
                 System.out.println(e);
         }
-                    //JsonArray expandedURLS = (JsonArray) arrayURLS.getJsonString("expanded_url");
-                    //arrayURLS.getString(Integer.parseInt("expanded_url"));
+                    
     }
 }
 
